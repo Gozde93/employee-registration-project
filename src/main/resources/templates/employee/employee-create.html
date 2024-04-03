@@ -28,6 +28,11 @@
                         <div class="form-group col">
                             <label for="inputFirstName4">First Name</label>
                             <input type="text" class="form-control" id="inputFirstName4" placeholder="First Name" th:field="*{firstName}">
+                            <div class="text-danger" th:if="${#fields.hasErrors('firstName')}">
+                                <ol>
+                                    <li th:each="error : ${#fields.errors('firstName')}" th:text="${error}"></li>
+                                </ol>
+                            </div>
                         </div>
                         <div class="form-group col">
                             <label for="inputLastName4">Last Name</label>
@@ -59,7 +64,7 @@
                     </div>
                     <div class="form-group">
                         <label for="inputAddress2">Address 2</label>
-                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" th:field="*{address}">
+                        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" th:field="*{address2}">
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-6">
